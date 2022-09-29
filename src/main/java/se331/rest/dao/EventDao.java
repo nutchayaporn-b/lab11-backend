@@ -11,5 +11,6 @@ public interface EventDao {
     Event getEvent(Long id);
 
     Event save(Event event);
+    Page<Event> getEvent(String name, Pageable page);
 }
 
