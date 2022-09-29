@@ -2,6 +2,7 @@ package se331.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,7 @@ public class EventController {
                 pageOutput = eventService.getEvents(perPage,page);
         }else{
                 pageOutput =
-                eventService.getEvents(title,PageRequest.of(page-1,perPage));
+                eventService.getEvents(title, PageRequest.of(page-1,perPage));
         }
     List<Event> output = null;
     HttpHeaders responseHeader = new HttpHeaders();
